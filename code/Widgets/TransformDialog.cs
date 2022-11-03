@@ -100,19 +100,9 @@ public class TransformDialog : Dialog
 		dialog.Show();
 	}
 
-	private float X => TryParseFloat( LineEditX.Text );
-	private float Y => TryParseFloat( LineEditY.Text );
-	private float Z => TryParseFloat( LineEditZ.Text );
-
-	private float TryParseFloat( string text )
-	{
-		if ( float.TryParse( text, out float value ) )
-		{
-			return value;
-		}
-
-		return default;
-	}
+	private float X => LineEditX.Text.TryParseFloat();
+	private float Y => LineEditY.Text.TryParseFloat();
+	private float Z => LineEditZ.Text.TryParseFloat();
 
 	private void Finish()
 	{

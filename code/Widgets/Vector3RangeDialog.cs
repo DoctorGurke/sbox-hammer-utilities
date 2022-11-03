@@ -122,22 +122,12 @@ public class Vector3RangeDialog : Dialog
 		dialog.Show();
 	}
 
-	private float FromX => TryParseFloat( LineEditFromX.Text );
-	private float ToX => TryParseFloat( LineEditToX.Text, IsRotation ? 0.0f : 1.0f );
-	private float FromY => TryParseFloat( LineEditFromY.Text );
-	private float ToY => TryParseFloat( LineEditToY.Text, IsRotation ? 0.0f : 1.0f );
-	private float FromZ => TryParseFloat( LineEditFromZ.Text );
-	private float ToZ => TryParseFloat( LineEditToZ.Text, IsRotation ? 0.0f : 1.0f );
-
-	private float TryParseFloat( string text, float fallback = 0.0f )
-	{
-		if ( float.TryParse( text, out float value ) )
-		{
-			return value;
-		}
-
-		return fallback;
-	}
+	private float FromX => LineEditFromX.Text.TryParseFloat();
+	private float ToX => LineEditToX.Text.TryParseFloat( IsRotation ? 0.0f : 1.0f );
+	private float FromY => LineEditFromY.Text.TryParseFloat();
+	private float ToY => LineEditToY.Text.TryParseFloat( IsRotation ? 0.0f : 1.0f );
+	private float FromZ => LineEditFromZ.Text.TryParseFloat();
+	private float ToZ => LineEditToZ.Text.TryParseFloat( IsRotation ? 0.0f : 1.0f );
 
 	private void Finish()
 	{

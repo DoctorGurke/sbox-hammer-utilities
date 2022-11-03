@@ -1,4 +1,5 @@
-﻿global using HammerUtilities.Utility;
+﻿global using HammerUtilities.Extensions;
+global using HammerUtilities.Utility;
 global using Sandbox;
 global using SandboxEditor;
 global using System;
@@ -91,7 +92,9 @@ public static class HammerUtilities
 		// util functions
 		scale.AddOption( "Apply Skybox Scale", "", () => { Selection.All.ToList().ForEach( node => node.Scale *= 0.0625f ); } );
 		scale.AddOption( "Scale Random 0-1", "", () => Selection.All.ToList().ForEach( x => x.Scale *= Rand.Float() ) );
-		scale.AddOption( "Scale Random...", "", () => Vector3RangeDialog.AskRange( ( range ) => { Selection.All.ToList().ForEach( x => x.Scale += range.RandomVector ); } ) );
+		scale.AddSeparator();
+		scale.AddOption( "Scale Random Uniform...", "", () => RangeDialog.AskRange( ( range ) => { Selection.All.ToList().ForEach( x => x.Scale *= Rand.Float( range.x, range.y ) ); } ) );
+		scale.AddOption( "Scale Random...", "", () => Vector3RangeDialog.AskRange( ( range ) => { Selection.All.ToList().ForEach( x => x.Scale *= range.RandomVector ); } ) );
 
 		return scale;
 	}
