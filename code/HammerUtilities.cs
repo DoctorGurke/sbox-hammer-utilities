@@ -13,23 +13,23 @@ namespace HammerUtilities;
 
 public static class HammerUtilities
 {
-	[Menu( "Hammer", "Hammer Utils/Transform/Translate", "open_with" )]
-	public static void MenuBarTranslate()
-	{
-		Log.Info( $"translate" );
-	}
+	//[Menu( "Hammer", "Hammer Utils/Transform/Translate", "open_with" )]
+	//public static void MenuBarTranslate()
+	//{
+	//	Log.Info( $"translate" );
+	//}
 
-	[Menu( "Hammer", "Hammer Utils/Transform/Rotate", "rotate_left" )]
-	public static void MenuBarRotate()
-	{
-		Log.Info( $"rotate" );
-	}
+	//[Menu( "Hammer", "Hammer Utils/Transform/Rotate", "rotate_left" )]
+	//public static void MenuBarRotate()
+	//{
+	//	Log.Info( $"rotate" );
+	//}
 
-	[Menu( "Hammer", "Hammer Utils/Transform/Scale", "open_in_full" )]
-	public static void MenuBarScale()
-	{
-		Log.Info( $"scale" );
-	}
+	//[Menu( "Hammer", "Hammer Utils/Transform/Scale", "open_in_full" )]
+	//public static void MenuBarScale()
+	//{
+	//	Log.Info( $"scale" );
+	//}
 
 	[Event( "hammer.mapview.contextmenu" )]
 	public static void ContextMenuTransform( Menu menu, MapView view )
