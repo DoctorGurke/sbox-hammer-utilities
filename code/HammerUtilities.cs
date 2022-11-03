@@ -51,7 +51,7 @@ public static class HammerUtilities
 
 	private static Menu AddTranslateMenu( this Menu menu )
 	{
-		var translate = menu.AddMenu( "Translate", "open_with" );
+		var translate = menu.AddMenu( "Translate Selection", "open_with" );
 
 		// default translate dialog
 		translate.AddOption( "Translate...", "", () => { TransformDialog.AskTranslate( ( translation ) => { Selection.All.ToList().ForEach( node => node.Position += translation ); } ); } );
