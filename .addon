@@ -1,0 +1,23 @@
+{
+  "Title": "Hammer Utilities",
+  "Type": "tool",
+  "Org": "doctor",
+  "Ident": "hammer_utilities",
+  "Tags": "",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "ResourcePaths": null,
+  "HasCode": true,
+  "CodePath": "code",
+  "RootNamespace": "Tools",
+  "Metadata": {
+    "ProjectTemplate": null,
+    "Compiler": {
+      "RootNamespace": "HammerUtilities",
+      "DefineConstants": "SANDBOX;ADDON;DEBUG",
+      "NoWarn": "1701;1702;1591;",
+      "Nullables": true
+    }
+  }
+}
