@@ -2,7 +2,8 @@
  s&box tool that provides utility functions for the hammer level editor.
  
  ## utility transform functions on selection:
- - Transform menus for Translation, Rotation and Scale
+ Note: These actions are currently all per-object. A group transform feature will be added next.
+ - Transform menus for Translation, Rotation, Scale and uniform Scale
  - Random Offset (custom range)
  - Random Pitch 0-360
  - Random Yaw 0-360
