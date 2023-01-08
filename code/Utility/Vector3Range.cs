@@ -1,4 +1,4 @@
-﻿using static Tools.Label;
+﻿using static Editor.Label;
 
 namespace HammerUtilities.Utility;
 
@@ -34,5 +34,5 @@ public struct Vector3Range
 		ToZ = toZ;
 	}
 
-	public Vector3 RandomVector => new Vector3( Rand.Float( FromX, ToX ), Rand.Float( FromY, ToY ), Rand.Float( FromZ, ToZ ) );
+	public Vector3 RandomVector => new Vector3( Random.Shared.Float( FromX, ToX ), Random.Shared.Float( FromY, ToY ), Random.Shared.Float( FromZ, ToZ ) );
 }
