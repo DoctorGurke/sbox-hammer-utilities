@@ -1,13 +1,11 @@
 ﻿global using HammerUtilities.Extensions;
 global using HammerUtilities.Utility;
 global using Sandbox;
-global using SandboxEditor;
+global using Editor;
 global using System;
 global using System.Linq;
-global using Tools;
-global using Tools.Editor;
-global using Tools.MapDoc;
-global using Tools.MapEditor;
+global using Editor.MapEditor;
+
 using HammerUtilities.Widgets;
 
 namespace HammerUtilities;
@@ -72,9 +70,9 @@ public static class HammerUtilities
 		rotate.AddSeparator();
 
 		// util functions
-		rotate.AddOption( "Random Pitch", "", () => Selection.All.ToList().ForEach( x => x.Angles = x.Angles.WithPitch( Rand.Int( 0, 360 ) ) ) );
-		rotate.AddOption( "Random Yaw", "", () => Selection.All.ToList().ForEach( x => x.Angles = x.Angles.WithYaw( Rand.Int( 0, 360 ) ) ) );
-		rotate.AddOption( "Random Roll", "", () => Selection.All.ToList().ForEach( x => x.Angles = x.Angles.WithRoll( Rand.Int( 0, 360 ) ) ) );
+		rotate.AddOption( "Random Pitch", "", () => Selection.All.ToList().ForEach( x => x.Angles = x.Angles.WithPitch( Random.Shared.Int( 0, 360 ) ) ) );
+		rotate.AddOption( "Random Yaw", "", () => Selection.All.ToList().ForEach( x => x.Angles = x.Angles.WithYaw( Random.Shared.Int( 0, 360 ) ) ) );
+		rotate.AddOption( "Random Roll", "", () => Selection.All.ToList().ForEach( x => x.Angles = x.Angles.WithRoll( Random.Shared.Int( 0, 360 ) ) ) );
 		rotate.AddSeparator();
 		rotate.AddOption( "Rotate Random...", "", () => Vector3RangeDialog.AskRotationRange( ( range ) => { Selection.All.ToList().ForEach( x => x.Angles += range.RandomVector ); } ) );
 
@@ -91,9 +89,9 @@ public static class HammerUtilities
 
 		// util functions
 		scale.AddOption( "Apply Skybox Scale", "", () => { Selection.All.ToList().ForEach( node => node.Scale *= 0.0625f ); } );
-		scale.AddOption( "Scale Random 0-1", "", () => Selection.All.ToList().ForEach( x => x.Scale *= Rand.Float() ) );
+		scale.AddOption( "Scale Random 0-1", "", () => Selection.All.ToList().ForEach( x => x.Scale *= Random.Shared.Float() ) );
 		scale.AddSeparator();
-		scale.AddOption( "Scale Random Uniform...", "", () => RangeDialog.AskRange( ( range ) => { Selection.All.ToList().ForEach( x => x.Scale *= Rand.Float( range.x, range.y ) ); } ) );
+		scale.AddOption( "Scale Random Uniform...", "", () => RangeDialog.AskRange( ( range ) => { Selection.All.ToList().ForEach( x => x.Scale *= Random.Shared.Float( range.x, range.y ) ); } ) );
 		scale.AddOption( "Scale Random...", "", () => Vector3RangeDialog.AskRange( ( range ) => { Selection.All.ToList().ForEach( x => x.Scale *= range.RandomVector ); } ) );
 
 		return scale;
